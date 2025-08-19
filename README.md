@@ -17,7 +17,7 @@ I'm Software Developer focusing on FullStack Web Developer/Apple echosystem
 
 ### 🔗 Links
 [![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=accenture&logoColor=white)](https://)
-[![Mail](https://img.shields.io/badge/Mail-FFFFFF?style=for-the-badge&logo=mailboxdotorg&logoColor=white)](mailto:nivdantas@icloud.com)
+[![Mail](https://img.shields.io/badge/Mail-FFFFFF?style=for-the-badge&)](mailto:nivdantas@icloud.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nivaldo-dantas/)
 
 ### 🛠️ Technologies & Tools
