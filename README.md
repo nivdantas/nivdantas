@@ -13,7 +13,7 @@ I'm Software Developer focusing on Full Stack Developer/Apple echosystem
 ### About me
 
 - 🎓 Bachelor's degree in Software Engineering from [**IFAM**](https://www2.ifam.edu.br)
-- 💫 Main languages are [**TypeScript**](https://www.typescriptlang.org), [**Swift**](https://swift.org)
+- 💫 Main languages are [**TypeScript**](https://www.typescriptlang.org) and [**Swift**](https://swift.org)
 
 ### 🔗 Links
 [![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=accenture&logoColor=white)](https://)
