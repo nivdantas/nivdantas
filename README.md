@@ -6,7 +6,7 @@
 
 I'm Software Developer focusing on FullStack Web Developer/Apple echosystem
 
-<img src="https://i.imgur.com/vQz9APO.gif" height="400px" align="right" />
+<img src="https://i.imgur.com/vQz9APO.gif" height="300px" align="right" />
 
 </div>
 
