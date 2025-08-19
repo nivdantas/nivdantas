@@ -6,7 +6,7 @@
 
 I'm Software Developer focusing on FullStack Web Developer/Apple echosystem
 
-<img src="https://hookah-haze.com/assets/img/bg_top.gif" height="400px" align="right" />
+<img src="https://i.imgur.com/vQz9APO.gif" height="400px" align="right" />
 
 </div>
 
