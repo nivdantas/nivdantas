@@ -4,7 +4,7 @@
 
 ### Hello, I'm Nivaldo Dantas, also known as Niv
 
-I'm Software Developer focusing on Full Stack Development
+I'm Software Developer focused on Full Stack Development
 
 <img src="https://i.imgur.com/309nUD6.gif" height="310px" align="right" />
 
