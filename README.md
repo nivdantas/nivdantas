@@ -13,7 +13,7 @@ I'm a Software Developer focused on Full Stack Development
 ### About me
 
 - 🎓 Bachelor's degree in Software Engineering from [**IFAM**](https://www2.ifam.edu.br)
-- 💫 Main languages are [**TypeScript**](https://www.typescriptlang.org),[**JavaScript**](https://developer.mozilla.org/en-US/docs/Web/JavaScript) and [**PHP**](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- 💫 Main languages are [**TypeScript**](https://www.typescriptlang.org), [**JavaScript**](https://developer.mozilla.org/en-US/docs/Web/JavaScript) and [**PHP**](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 ### 🔗 Links
 [![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=accenture&logoColor=white)](https://nivdantas.com)
