@@ -27,6 +27,6 @@ I'm a Software Developer focused on Full Stack Development
   <img align="center" alt="React" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
   <img align="center" alt="Tailwind" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/express/express-original-wordmark.svg">
   <img align="center" alt="Tailwind" height="30" width="40" src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg">
-  <img align="center" alt="Swift" height="30" width="40" src="[https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/swift/swift-original.svg](https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/php/php-plain.svg)">
+  <img align="center" alt="Swift" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/php/php-plain.svg">
   
 </div>
