@@ -60,7 +60,7 @@ EXPO = "cubic-bezier(0.16, 1, 0.3, 1)"
 
 class Font:
     def __init__(self, file, family, weight=400):
-        font = TTFont(FONTS / file)
+        font = TTFont(FONTS / file, recalcTimestamp=False)
         if "fvar" in font:
             font = instancer.instantiateVariableFont(font, {"wght": weight})
         buffer = io.BytesIO()
@@ -83,7 +83,7 @@ class Font:
         options.layout_features = ["kern", "liga", "tnum"]
         options.name_IDs = []
         subsetter = subset.Subsetter(options)
-        font = TTFont(io.BytesIO(self.raw))
+        font = TTFont(io.BytesIO(self.raw), recalcTimestamp=False)
         subsetter.populate(text="".join(sorted(self.used)) + " ")
         subsetter.subset(font)
         out = io.BytesIO()
@@ -614,7 +614,7 @@ def _visibility_track(name, frames, loop, rest):
     by_pct.setdefault(0.0, rest)
     by_pct.setdefault(100.0, rest)
     tracks = {}
-    for frame in set(by_pct.values()):
+    for frame in sorted(set(by_pct.values())):
         out, last = [], None
         for p in sorted(by_pct):
             on = by_pct[p] == frame
