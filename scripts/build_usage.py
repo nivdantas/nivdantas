@@ -30,7 +30,12 @@ def fetch(login):
     )
     with urllib.request.urlopen(request, timeout=30) as response:
         data = json.load(response)
-    calendar = data["data"]["user"]["contributionsCollection"]["contributionCalendar"]
+    if data.get("errors"):
+        raise RuntimeError("GitHub returned GraphQL errors while fetching the contribution calendar.")
+    user = (data.get("data") or {}).get("user")
+    if user is None:
+        raise RuntimeError(f"GitHub returned no contribution calendar for {login}.")
+    calendar = user["contributionsCollection"]["contributionCalendar"]
     weeks = [[(dt.date.fromisoformat(d["date"]), d["contributionCount"]) for d in w["contributionDays"]]
              for w in calendar["weeks"]]
     return calendar["totalContributions"], weeks
@@ -38,6 +43,8 @@ def fetch(login):
 
 def stats(total, weeks):
     days = [d for w in weeks for d in w]
+    if not days:
+        raise ValueError("The contribution calendar contains no days.")
     today = days[-1][0]
     counts = [c for _, c in days]
     # Current streak: today may still be empty, so it counts back from yesterday.
@@ -54,11 +61,13 @@ def stats(total, weeks):
         longest = max(longest, run)
     this_week = sum(c for _, c in weeks[-1])
     past = [sum(c for _, c in w) for w in weeks[:-1]]
-    best = max(past + [this_week, 1])
-    average = sum(past) / max(1, len(past))
-    elapsed = len(weeks[-1])  # days so far this week, Sunday first
-    expected = average * elapsed / 7
-    pace = "ahead" if this_week > expected * 1.1 else "behind" if this_week < expected * 0.9 else "on"
+    best = max(past + [this_week])
+    complete_weeks = [total for week, total in zip(weeks[:-1], past) if len(week) == 7]
+    elapsed = (today.weekday() + 1) % 7 + 1  # Sunday is day one.
+    pace = "on"
+    if complete_weeks:
+        expected = sum(complete_weeks) / len(complete_weeks) * elapsed / 7
+        pace = "ahead" if this_week > expected * 1.1 else "behind" if this_week < expected * 0.9 else "on"
     return {
         "today": today,
         "total": total,
@@ -67,7 +76,7 @@ def stats(total, weeks):
         "this_week": this_week,
         "best": best,
         "pace": pace,
-        "resets": 7 - elapsed,
+        "resets": 8 - elapsed,
         "weekly": [(w[0][0], sum(c for _, c in w)) for w in weeks],
     }
 
@@ -120,7 +129,7 @@ def usage(theme, s):
     svg.add(svg.text(x + 22, 70, "This week", "strong"))
     svg.add(svg.text(x + w - 22, 70, f"{s['this_week']} · best week {s['best']}", "small", anchor="end"))
     meter(svg, x + 22, 80, w - 44, s["this_week"], s["best"], 0.1)
-    resets = "Resets tomorrow" if s["resets"] == 1 else "Resets today" if s["resets"] == 0 else f"Resets in {s['resets']} days"
+    resets = "Resets tomorrow" if s["resets"] == 1 else f"Resets in {s['resets']} days"
     svg.add(svg.text(x + 22, 110, resets, "small"))
     svg.add(svg.text(x + 22, 148, "Current streak", "strong"))
     svg.add(svg.text(x + w - 22, 148, f"{plural(s['current'], 'day')} of {s['longest']}", "small", anchor="end"))
@@ -151,8 +160,8 @@ def usage(theme, s):
                 f'<rect x="{bx:.1f}" y="{base - hgt:.1f}" width="{bw:.1f}" height="{hgt:.1f}" rx="2" fill="{color}"/>'
                 + (f'<rect x="{bx:.1f}" y="{base - hgt:.1f}" width="{bw:.1f}" height="{hgt:.1f}" rx="2" fill="url(#grain)"/>' if n else "")
                 + "</g>")
-    fmt = lambda d: d.strftime("%b %-d")
-    svg.add(svg.text(x + 22, 214, fmt(recent[0][0]), "label"))
+    first_day = recent[0][0]
+    svg.add(svg.text(x + 22, 214, f"{first_day:%b} {first_day.day}", "label"))
     svg.add(svg.text(x + w - 22, 214, f"This week · updated daily", "label", anchor="end"))
     return svg.render()
 
