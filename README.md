@@ -1,32 +1,35 @@
 <div align="center">
-  
-# ❄️
 
-### Hello, I'm Nivaldo Dantas, also known as Niv
+# Nivaldo Dantas
 
-I'm a Software Developer focused on Full Stack Development
+### Software developer building thoughtful interfaces and useful products
 
-<img src="https://i.imgur.com/309nUD6.gif" height="310px" align="right" />
+[Portfolio](https://nivdantas.com) · [LinkedIn](https://www.linkedin.com/in/nivaldo-dantas/) · [Email](mailto:nivdantas@icloud.com)
 
 </div>
 
-### About me
+## About
 
-- 🎓 Bachelor's degree in Software Engineering from [**IFAM**](https://www2.ifam.edu.br)
-- 💫 Main languages are [**TypeScript**](https://www.typescriptlang.org), [**JavaScript**](https://developer.mozilla.org/en-US/docs/Web/JavaScript) and [**PHP**](https://www.php.net/docs.php)
+I'm Niv, a software developer working across frontend interfaces, APIs, and data-backed applications. I care about making software clear to use and reliable behind the scenes. I work with teams including Bellus and Worktables, and take on independent projects.
 
-### 🔗 Links
-[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=accenture&logoColor=white)](https://nivdantas.com)
-[![Mail](https://img.shields.io/badge/Mail-FFFFFF?style=for-the-badge&)](mailto:nivdantas@icloud.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nivaldo-dantas/)
+I hold a Bachelor's degree in Software Engineering from the Federal Institute of Amazonas (IFAM, 2020–2025).
 
-### 🛠️ Technologies & Tools
-<div style="display: inline_block">
-  <img align="center" alt="TypeScript" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg">
-  <img align="center" alt="NextJS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/nextjs/nextjs-original.svg">
-  <img align="center" alt="React" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
-  <img align="center" alt="Tailwind" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/express/express-original-wordmark.svg">
-  <img align="center" alt="Tailwind" height="30" width="40" src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg">
-  <img align="center" alt="Swift" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/php/php-plain.svg">
-  
-</div>
+## Selected work
+
+- **[Bolota](https://github.com/nivdantas/bolota)** — A veterinary assistant that connects a conversational interface to pet shop information. Built with React, TypeScript, Gemini, Express, and SQLite.
+- **n-store** — An e-commerce platform in development, built with Laravel, PHP, and Blade.
+- **TakoStreak** — A daily streak tool in development, exploring React, TanStack, Express, and TypeScript.
+
+More projects, details, and writing are on my [portfolio](https://nivdantas.com).
+
+## Tools I use
+
+- **Frontend:** React, Svelte, React Native, TypeScript
+- **Backend:** Express, Laravel, PHP, REST APIs, SQL
+- **Other:** n8n, webhooks, Gemini, SQLite, Docker
+
+## Find me
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-nivdantas.com-1E3B2F?style=for-the-badge)](https://nivdantas.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Nivaldo_Dantas-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nivaldo-dantas/)
+[![Email](https://img.shields.io/badge/Email-Say_hello-555555?style=for-the-badge&logo=maildotru&logoColor=white)](mailto:nivdantas@icloud.com)
