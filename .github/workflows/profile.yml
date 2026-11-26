@@ -1,0 +1,42 @@
+name: Refresh the profile
+
+# Once a day: redraw the contribution cards and the snake, and publish them to the output branch.
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/workflows/profile.yml, scripts/inkkit.py, scripts/build_usage.py]
+
+permissions:
+  contents: write
+
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Draw the contribution cards
+        run: |
+          pip install --quiet fonttools brotli
+          python scripts/build_usage.py dist ${{ github.repository_owner }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/snake-light.svg?color_snake=#2d5cd7&color_dots=#e4e1dd,#a8c4ff,#7f9ef0,#3c6dec,#1842b4
+            dist/snake-dark.svg?color_snake=#7f9ef0&color_dots=#141e3d,#1842b4,#3c6dec,#7f9ef0,#a8c4ff
+
+      - uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+          commit_message: Refresh the profile cards
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
