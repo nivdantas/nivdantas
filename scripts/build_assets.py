@@ -325,8 +325,6 @@ def footer(theme):
 
 def main():
     OUT.mkdir(exist_ok=True)
-    for old in OUT.glob("*.svg"):
-        old.unlink()
     builders = {"header": header, "footer": footer}
     for p in PROJECTS:
         builders[f"project-{p['slug']}"] = lambda theme, p=p: project_row(theme, p)
