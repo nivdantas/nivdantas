@@ -1,7 +1,10 @@
 import datetime as dt
+import sys
 import unittest
+from pathlib import Path
 from xml.etree import ElementTree
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from build_usage import stats, usage
 from inkkit import THEMES, reset_fonts
 
